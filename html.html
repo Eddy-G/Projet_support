@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support CSAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
+    <script type = "text/JavaScript" src = "moment.js"></script>
+
+
+</head>
+
+<body>
+    <div id="wallpaper" class="background-image"></div>
+    <header>
+        <div class="header">
+            <img id="OdigoImage" src="/Images/logo-odigo.svg" alt="logo-odigo">
+            <div><hr class="center-diamond"></div>     
+            <div class="black-block-container-motivation">   
+                <p id="motivation"></p>
+            </div>
+        </div>
+    </header>
+    
+   
+
+    <main>
+        <div class="sticky-note">
+            <h2>Lien</h2>
+            <hr class="note-separation">
+            <h3>Service Now</h3>
+            <div class="block-link">
+                <a href="https://www.google.fr">Service Now - Daily journalier</a>
+                <a href="https://www.google.fr">Service Now - Dashboard</a>
+                <a href="https://www.google.fr">Service Now - Incident / Demande de service</a>
+            </div>
+            <h3>Lecture de LOG</h3>
+            <div class="block-link">
+                <a href="https://www.google.fr">Kibana - Module Controle (Standard)</a>
+                <a href="https://www.google.fr">Kibana - Module Controle (Avancée)</a>
+                <a href="https://www.google.fr">Kibana - WebRTC</a>
+                <a href="https://www.google.fr">Telecom</a>
+            </div>
+            <h3>Instance (routing/Record...)</h3>
+            <div class="block-link">
+                <a href="https://www.google.fr">Polarlight</a>
+                <a href="https://www.google.fr">Record : Produit-Web</a>
+            </div>
+            <h3>Documentation</h3>
+            <div class="block-link">
+                <a href="https://www.google.fr">HelpCenter (Interne)</a>
+                <a href="https://www.google.fr">HelpCenter (Client)</a>
+                <a href="https://www.google.fr">Serveur Odigo - SVI</a>
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex;">
+                <fieldset class="field-container">
+                    <input type="text" id="searchInput" placeholder="Rechercher sur google..." class="st-default-search-input field" />
+                    <div class="icons-container">
+                    <div class="icon-search" ></div>
+                    <div class="icon-close">
+                        <div class="x-up"></div>
+                        <div class="x-down"></div>
+                    </div>
+                    </div>
+                </fieldset>
+            </div> 
+            <div class="black-block-container-clock">
+                <div class="clock-col">
+                  <p class="clock-day clock-timer">
+                  </p>
+                  <p class="clock-label">
+                    Day
+                  </p>
+                </div>
+                <div class="clock-col">
+                  <p class="clock-hours clock-timer">
+                  </p>
+                  <p class="clock-label">
+                    Hours
+                  </p>
+                </div>
+                <div class="clock-col">
+                  <p class="clock-minutes clock-timer">
+                  </p>
+                  <p class="clock-label">
+                    Minutes
+                  </p>
+                </div>
+                <div class="clock-col">
+                  <p class="clock-seconds clock-timer">
+                  </p>
+                  <p class="clock-label">
+                    Seconds
+                  </p>
+                </div>
+            </div>                       
+        </div>
+
+        <div class="sticky-note">
+            <h2>Mon Pense-Bête</h2>
+            <hr class="note-separation">
+            <h3>Tag ServiceNow - Ticket</h3>
+            <div class="block-link">
+                <h4>PROCESS-OK :</h4>
+                    <p>ticket qui doit bien être traité par notre groupe (on continuera à le traiter demain)</p>
+                <h4>CPT-01 :</h4>
+                    <p>capitalisation nécessaire</p>
+                <h4>INC-BUILD :</h4>
+                    <p>INC suite à un Build, dév non conforme à la SPEC,… </p>
+                <h4>INC-UPGRADE-INTERNE :</h4>
+                    <p>INC suite Montée version produit (one release, patch, NG,…)</p>
+                <h4>INC-UPGRADE-CLIENT :</h4>
+                    <p>INC suite à un change client</p>
+                <h4>VENTE-PRESTATION :</h4>
+                    <p>INC/SR qui doit donner lieu à la vente d’une prestation d’accompagnement client ou d’une formation</p>
+                <h4>FACT01 :</h4>
+                    <p>INC/SR qui doit donner lieu à une évolution à facturer au client</p>
+                <h4>ROUTAGE-KO :</h4>
+                    <p>INC/SR qui arrive à tord dans notre groupe (règle de routage à modifier,…)</p>
+                <h4>INC-VIE-SOLUTION :</h4>
+                    <p>Certificat expiré, problème CPU, saturation espace disque avec logs,…</p>
+                <h4>CORE :</h4>
+                    <p>Application qui donne lieu à un core</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 GARNIER Eddy. Tous droits réservés.</p>
+    </footer>
+</body>
+<script type="text/javascript" src="javaScript.js"></script>
+</html>
