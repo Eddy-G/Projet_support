@@ -94,3 +94,19 @@ function updateTime() {
   document.documentElement.style.setProperty('--timer-seconds', "'" + moment().format("ss") + "'");
   requestAnimationFrame(updateTime);
 }
+
+function updateMaxHeightOfStickyNote()
+{
+    var maDivGauche = document.getElementById("sticky-note-Gauche");
+    var maDivDroite = document.getElementById("sticky-note-Droite");
+
+    if(maDivGauche.offsetHeight < maDivDroite.offsetHeight){
+        var newSize = maDivDroite.offsetHeight - 40;
+        maDivGauche.style.height = newSize+"px";
+    }else{
+        var newSize = maDivGauche.offsetHeight - 40;
+        maDivDroite.style.height = newSize+"px";
+    }
+}
+
+updateMaxHeightOfStickyNote()

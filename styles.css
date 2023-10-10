@@ -19,15 +19,6 @@ h1 {
     align-items: center; /* Centre verticalement */
     font-size: 48px;
 }
-h2 { 
-  text-align: center;
-  color: #7c795d; 
-  font-family: 'Trocchi', serif; 
-  font-size: 45px; 
-  font-weight: bolder; 
-  line-height: 48px; 
-  margin: 0; 
-}
 
 
 
@@ -66,27 +57,94 @@ footer {
     background-color: #000000;
     color: #fff;
 }
-#motivation{
-    font-size: 24px;
+/******************************************************************************************/
+/* BACKGROUND IMAGE */
+.background-image {
+  opacity: 60%;
+  background-size: cover; /* Redimensionne l'image pour couvrir tout l'écran */
+  background-position: center; /* Centre l'image horizontalement et verticalement */
+  position: fixed; /* Assurez-vous que l'image reste en arrière-plan */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Placez l'image en dessous de tout le contenu */
+}
+
+/******************************************************************************************/
+/* PARTIE HEADER */
+
+.header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#OdigoImage{
+  text-align: center;
+  width: 10%;
 }
 
 hr.center-diamond {
     border: 0;
     height: 2px;
     width: 70vh;
-    margin: 30px;
+    margin: 15px;
     background: var(--primarycolor);
     /* Opera, Chrome, and Safari */
 }
 
-h3{
+.black-block-container-motivation{
+  opacity: 80%;
+  background-color: #000000;
+  border-radius: 5px;
+  padding: 30px 25px;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, .15), 0 15px 90px 30px rgba(0, 0, 0, .25);
+  border-radius: 30px;
+}
+.black-block-container-motivation > p{
+  color: white;
+}
+
+#motivation{
+  font-size: 150%;/*24*/
+}
+
+/******************************************************************************************/
+/* BLOCK DE GAUCHE ET DE DROITE */
+
+.sticky-note {
+  display: inline-block;
+  flex-direction: column;
+  opacity: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  font-family: Arial, sans-serif;
+  background-color: var(--primarycolor); /* Couleur marron */
+  width: 22%;
+  padding: 20px;
+  border: 2px solid var(--primarycolor); /* Bordure marron foncé */
+  border-radius: 5px;
+  overflow: auto;
+  
+}
+
+.sticky-note h2 {
+    font-size: 170%;/*28*/
+    margin-bottom: 10px;
+    color: #fff; /* Texte en blanc */
+}
+
+.sticky-note h3{
   margin-top: 15px;
   position: relative;
   padding-left: 20px; /* Espacement entre le carré et le texte */
-  font-size: 24px;
+  font-size: 110%; /*18*/
   margin-bottom: 3px;
 }
-h3::before{
+
+.sticky-note h3::before{
   content: ""; /* Contenu généré par le pseudo-élément */
   position: absolute;
   left: 0;
@@ -98,15 +156,30 @@ h3::before{
   background-color: white; /* Couleur du carré (remplacez par la couleur de votre choix) */
 }
 
+.block-link h4{
+  font-size: 90%; /*14*/
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.sticky-note a {
+    font-size: 100%; /*16*/
+    color: white; /* Texte en noir */
+    text-decoration: none;
+}
+.sticky-note p {
+  font-size: 80%; /*12*/
+  color: white; /* Texte en noir */
+}
+.sticky-note a:hover{
+  font-weight: bold;
+}
+
 .block-link{
   display: flex;
   flex-direction: column;
   padding-left: 10%;
 }
-.block-link h4{
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
+
 
 .note-separation {
 background: white;
@@ -115,78 +188,13 @@ height: 2px;
 margin-bottom: 15px;
 }
 
-.header{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 
-#OdigoImage{
-  text-align: center;
-  width: 200px;
-}
+
+
   
-/*#####################################################################################################*/
-.background-image {
-    opacity: 60%;
-    background-size: cover; /* Redimensionne l'image pour couvrir tout l'écran */
-    background-position: center; /* Centre l'image horizontalement et verticalement */
-    position: fixed; /* Assurez-vous que l'image reste en arrière-plan */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Placez l'image en dessous de tout le contenu */
-}
-/*#####################################################################################################*/
+/******************************************************************************************/
 
-.content {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-
-.sticky-note {
-  display: flex;
-  flex-direction: column;
-  opacity: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Arial, sans-serif;
-  height: 68vh; /* Centrer le pense-bête verticalement */
-  background-color: var(--primarycolor); /* Couleur marron */
-  width: 500px;
-  padding: 20px;
-  border: 2px solid var(--primarycolor); /* Bordure marron foncé */
-  border-radius: 5px;
-}
-
-.sticky-note h2 {
-    font-size: 38px;
-    margin-bottom: 10px;
-    color: #fff; /* Texte en blanc */
-}
-
-.sticky-note a {
-    font-size: 18px;
-    color: white; /* Texte en noir */
-    text-decoration: none;
-}
-.sticky-note p {
-  font-size: 18px;
-  color: white; /* Texte en noir */
-}
-.sticky-note a:hover{
-  font-weight: bold;
-}
-
-
-/*#####################################################################################################*/
+/* BARRE DE RECHERCHE */
 
 .title-container {
   position: absolute;
@@ -203,9 +211,9 @@ margin-bottom: 15px;
 .field-container {
   position: relative !important;
   padding: 0 !important;
-  margin: 20px !important;
+  margin: auto !important;
   border: 0 !important;
-  width: 660px !important;
+  width: 80% !important;
   height: 40px !important;
 }
 
@@ -358,7 +366,8 @@ margin-bottom: 15px;
   -webkit-transform: translateX(200%);
           transform: translateX(200%);
 }
-
+/******************************************************************************************/
+/* HORLOGE DIGITAL */
 
 .clock-day:before {
   content: var(--timer-day);
@@ -373,19 +382,9 @@ margin-bottom: 15px;
   content: var(--timer-seconds);
 }
 
-.black-block-container-motivation{
-  opacity: 80%;
-  background-color: #000000;
-  border-radius: 5px;
-  padding: 30px 25px;
-  box-shadow: 1px 1px 5px rgba(255, 255, 255, .15), 0 15px 90px 30px rgba(0, 0, 0, .25);
-  border-radius: 30px;
-}
-.black-block-container-motivation > p{
-  color: white;
-}
+
 .black-block-container-clock {
-  margin-bottom: 50%;
+  margin-top: 10%;
   opacity: 80%;
   background-color: #000000;
   border-radius: 5px;
@@ -429,3 +428,4 @@ margin-bottom: 15px;
   margin-top: 10px;
 }
 
+/******************************************************************************************/
