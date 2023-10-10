@@ -110,3 +110,7 @@ function updateMaxHeightOfStickyNote()
 }
 
 updateMaxHeightOfStickyNote()
+
+$(window).resize(function() {
+    updateMaxHeightOfStickyNote()
+});
