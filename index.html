@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
-    <script type = "text/JavaScript" src = "moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/fr.js"></script>
 
 
 </head>
@@ -30,7 +31,7 @@
 
     <main>
         <div id="sticky-note-Gauche" class="sticky-note">
-            <h2>Lien</h2>
+            <h2>Liens</h2>
             <hr class="note-separation">
             <h3>Service Now</h3>
             <div class="block-link">
@@ -50,7 +51,7 @@
                 <a href="https://www.google.fr">Polarlight</a>
                 <a href="https://www.google.fr">Record : Produit-Web</a>
             </div>
-            <h3>Documentation</h3>
+            <h3>Documentations</h3>
             <div class="block-link">
                 <a href="https://www.google.fr">HelpCenter (Interne)</a>
                 <a href="https://www.google.fr">HelpCenter (Client)</a>
@@ -58,32 +59,30 @@
             </div>
         </div>
 
-        <div style="display: flex; flex-direction: column; justify-content: flex-start;">
-            <div style="display: flex;">
-                <fieldset class="field-container">
-                    <input type="text" id="searchInput" placeholder="Rechercher sur google..." class="st-default-search-input field" />
-                    <div class="icons-container">
-                    <div class="icon-search" ></div>
-                    <div class="icon-close">
-                        <div class="x-up"></div>
-                        <div class="x-down"></div>
-                    </div>
-                    </div>
-                </fieldset>
+        <div class="block-center">
+            <div id="search">
+                <svg viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="bar"/>                  
+                    <g class="magnifier">
+                        <circle class="glass"/>
+                        <line class="handle" x1="32" y1="32" x2="44" y2="44"></line>
+                    </g>
+                </svg>
+                <input id="searchInput" placeholder="Recherche Google..." type=search name=q aria-label="Search for inspiration"/>
             </div> 
             <div class="black-block-container-clock">
                 <div class="clock-col">
                   <p class="clock-day clock-timer">
                   </p>
                   <p class="clock-label">
-                    Day
+                    Jour
                   </p>
                 </div>
                 <div class="clock-col">
                   <p class="clock-hours clock-timer">
                   </p>
                   <p class="clock-label">
-                    Hours
+                    Heures
                   </p>
                 </div>
                 <div class="clock-col">
@@ -93,15 +92,11 @@
                     Minutes
                   </p>
                 </div>
-                <div class="clock-col">
-                  <p class="clock-seconds clock-timer">
-                  </p>
-                  <p class="clock-label">
-                    Seconds
-                  </p>
-                </div>
             </div>                       
+        </div>                      
         </div>
+
+
 
         <div id="sticky-note-Droite" class="sticky-note">
             <h2>Mon Pense-Bête</h2>

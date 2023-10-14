@@ -1,5 +1,6 @@
 :root {
-  --primarycolor: none /* RGB alpha hexadecimal color notation */
+  --primarycolor: none; /* RGB alpha hexadecimal color notation */
+  --secondarycolor:none
 }
 /* Réinitialiser les styles par défaut */
 * {
@@ -103,6 +104,7 @@ hr.center-diamond {
   border-radius: 30px;
 }
 .black-block-container-motivation > p{
+  font-family: 'Courier New', Courier, monospace;
   color: white;
 }
 
@@ -121,13 +123,12 @@ hr.center-diamond {
   margin-right: auto;
   margin-bottom: auto;
   font-family: Arial, sans-serif;
-  background-color: var(--primarycolor); /* Couleur marron */
+  background-color: var(--secondarycolor); /* Couleur marron */
   width: 22%;
   padding: 20px;
-  border: 2px solid var(--primarycolor); /* Bordure marron foncé */
-  border-radius: 5px;
+  border: 8px solid var(--primarycolor); /* Bordure marron foncé */
+  border-radius: 20px;
   overflow: auto;
-  
 }
 
 .sticky-note h2 {
@@ -189,182 +190,103 @@ margin-bottom: 15px;
 }
 
 
-
+.block-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
   
 /******************************************************************************************/
 
 /* BARRE DE RECHERCHE */
 
-.title-container {
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  overflow: hidden;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+#search {
+	display: grid;
+	grid-area: search;
+	grid-template:
+		"search" 60px
+		/ 420px;
+	justify-content: center;
+	align-content: center;
+	justify-items: stretch;
+	align-items: stretch;
+	background: hsl(0, 0%, 99%);
+  border-radius: 25px;
 }
 
-.field-container {
-  position: relative !important;
-  padding: 0 !important;
-  margin: auto !important;
-  border: 0 !important;
-  width: 80% !important;
-  height: 40px !important;
-}
-
-.icons-container {
-  position: absolute;
-  top: 11px;
-  right: -25px;
-  width: 35px;
-  height: 35px;
-  overflow: hidden;
-}
-
-.icon-close {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 75%;
-  height: 75%;
-  opacity: 0;
-  cursor: pointer;
-  -webkit-transform: translateX(-200%);
-          transform: translateX(-200%);
-  border-radius: 50%;
-  -webkit-transition: opacity 0.25s ease, -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: opacity 0.25s ease, -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: opacity 0.25s ease, transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: opacity 0.25s ease, transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
-}
-.icon-close:before {
-  content: "";
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  border: 2px solid transparent;
-  border-top-color: #6078EA;
-  border-left-color: #6078EA;
-  border-bottom-color: #6078EA;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
-}
-.icon-close .x-up {
-  position: relative;
-  width: 100%;
-  height: 50%;
-}
-.icon-close .x-up:before {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  left: 3px;
-  width: 50%;
-  height: 2px;
-  background-color: #6078EA;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-.icon-close .x-up:after {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  right: 0px;
-  width: 50%;
-  height: 2px;
-  background-color: #6078EA;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-.icon-close .x-down {
-  position: relative;
-  width: 100%;
-  height: 50%;
-}
-.icon-close .x-down:before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 4px;
-  width: 50%;
-  height: 2px;
-  background-color: #6078EA;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-.icon-close .x-down:after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  right: 1px;
-  width: 50%;
-  height: 2px;
-  background-color: #6078EA;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+#search input {
+	display: block;
+	grid-area: search;
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 100%;
+	background: none;
+	padding: 0 30px 0 60px;
+	border: none;
+	border-radius: 100px;
+	font: 24px/1 system-ui, sans-serif;
+	outline-offset: -8px;
 }
 
 
-.icon-search {
-  position: relative;
-  top: 5px;
-  left: 8px;
-  width: 50%;
-  height: 50%;
-  opacity: 1;
-  border-radius: 50%;
-  border: 3px solid #c7d0f8;
-  -webkit-transition: opacity 0.25s ease, -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: opacity 0.25s ease, -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: opacity 0.25s ease, transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: opacity 0.25s ease, transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
-}
-.icon-search:after {
-  content: "";
-  position: absolute;
-  bottom: -9px;
-  right: -2px;
-  width: 4px;
-  border-radius: 3px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  height: 10px;
-  background-color: #c7d0f8;
+#search svg {
+	grid-area: search;
+	overflow: visible;
+	color: var(--primarycolor);
+	fill: none;
+	stroke: currentColor;
 }
 
-.field {
-  border: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  padding: 10px 20px !important;
-  background: white !important;
-  border-radius: 50px !important;
-  box-shadow: 0px 8px 15px rgba(75, 72, 72, 0.1) !important;
-  -webkit-transition: all 0.4s ease !important;
-  transition: all 0.4s ease !important;
+#search > input{
+  font-size: 100%;
 }
-.field:focus {
-  outline: none;
-  box-shadow: 0px 9px 20px rgba(75, 72, 72, 0.3);
+
+.bar {
+	width: 100%;
+	height: 100%;
+	ry: 50%;
+	stroke-width: 10;
+	animation: bar-in 900ms 0.5s both;
 }
-.field:focus + .icons-container .icon-close {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+
+@keyframes bar-in {
+	0% { stroke-dasharray: 0 180 0 226 0 405 0 0 }
+	100% { stroke-dasharray: 0 0 181 0 227 0 405 0 }
 }
-.field:focus + .icons-container .icon-search {
-  opacity: 0;
-  -webkit-transform: translateX(200%);
-          transform: translateX(200%);
+
+.magnifier {
+	animation: magnifier-in 600ms 0.5s both;
+	transform-box: fill-box;
+}
+
+@keyframes magnifier-in {
+	0% { transform: translate(20px, 8px) rotate(-45deg) scale(0.01, 0.01); }
+	50% { transform: translate(-4px, 8px) rotate(-45deg); }
+	100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.magnifier .glass {
+	cx: 27;
+	cy: 27;
+	r: 8;
+	stroke-width: 3;
+}
+.magnifier .handle {
+	x1: 32;
+	y1: 32;
+	x2: 44;
+	y2: 44;
+	stroke-width: 3;
+}
+
+
+
+#results {
+	grid-area: results;
+	background: hsl(0, 0%, 95%);
 }
 /******************************************************************************************/
 /* HORLOGE DIGITAL */
@@ -384,30 +306,35 @@ margin-bottom: 15px;
 
 
 .black-block-container-clock {
+  display: flex;
+  justify-content: center;
+  max-height: 10%;
+  width: 90%;
   margin-top: 10%;
   opacity: 80%;
   background-color: #000000;
   border-radius: 5px;
-  padding: 30px 25px;
   box-shadow: 1px 1px 5px rgba(255, 255, 255, .15), 0 15px 90px 30px rgba(0, 0, 0, .25);
-  display: flex;
   border-radius: 30px;
+  
 }
 .clock-col {
+  margin-top: 6px;
+  margin-bottom: 6px;
   text-align: center;
-  margin-right: 40px;
+  margin-right: 25px;
   margin-left: 40px;
-  min-width: 90px;
+  min-width: 30px;
   position: relative;
 }
 .clock-col:not(:last-child):before, .clock-col:not(:last-child):after {
+  display: block;
+  position: absolute;
   content: "";
   background-color: rgba(255, 255, 255, .3);
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  display: block;
-  position: absolute;
   right: -42px;
 }
 .clock-col:not(:last-child):before {
@@ -418,7 +345,7 @@ margin-bottom: 15px;
 }
 .clock-timer:before {
   color: #fff;
-  font-size: 4.2rem;
+  font-size: 160%;
   text-transform: uppercase;
 }
 .clock-label {
@@ -429,3 +356,5 @@ margin-bottom: 15px;
 }
 
 /******************************************************************************************/
+
+
