@@ -73,7 +73,7 @@ elementMotivation.textContent = phraseDuJour;
 var elementWallpaper = document.getElementById("wallpaper");
 var wallPaperDuJour = WallpaperAleatoire();
 console.log(wallPaperDuJour);
-elementWallpaper.style.backgroundImage = "url('Images/WallPaper/"+wallPaperDuJour+".jpg')"
+elementWallpaper.style.backgroundImage = "url('Images/WallPaper/"+wallPaperDuJour+".webp')"
 
 
 function eclaircirCouleur(hex, pourcentage) {
