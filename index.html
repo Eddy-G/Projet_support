@@ -7,6 +7,7 @@
     <title>Support CSAT</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=AR+One+Sans&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
@@ -17,49 +18,93 @@
 
 <body>
     <div id="wallpaper" class="background-image"></div>
-    <header>
-        <div class="header">
-            <img id="OdigoImage" src="https://raw.githubusercontent.com/Eddy-G/Projet_support/09fd9a1c94dd73cddfd3b9e244e8b04e5c86fe5f/Images/logo-odigo.svg" alt="logo-odigo">
-            <div><hr class="center-diamond"></div>     
-            <div class="black-block-container-motivation">   
-                <p id="motivation"></p>
-            </div>
-        </div>
-    </header>
+    <img id="OdigoImage" src="https://raw.githubusercontent.com/Eddy-G/Projet_support/09fd9a1c94dd73cddfd3b9e244e8b04e5c86fe5f/Images/logo-odigo.svg" alt="logo-odigo">
+    <div><hr class="center-diamond"></div>             
     
-   
-
     <main>
         <div id="sticky-note-Gauche" class="sticky-note">
             <h2>Liens</h2>
             <hr class="note-separation">
-            <h3>Service Now</h3>
+            
             <div class="block-link">
-                <a href="https://www.google.fr">Service Now - Daily journalier</a>
-                <a href="https://www.google.fr">Service Now - Dashboard</a>
-                <a href="https://www.google.fr">Service Now - Incident / Demande de service</a>
+                <h3>Service Now</h3>
+                <div class="categorie">
+                    <div class="LogoAndToolTip">
+                        <img src="/Images/LogoLink/DailyServiceNow.svg" alt="Daily journalier">
+                        <a href="https://www.google.fr">Daily journalier</a>
+                    </div>
+                    <div class="LogoAndToolTip"> 
+                        <img src="/Images/LogoLink/Ticket.svg" alt="Incident / Ticket">
+                        <a href="https://www.google.fr">Incident / SR</a>
+                    </div>
+                    <div class="LogoAndToolTip">
+                        <img src="/Images/LogoLink/Dashboard.svg" alt="Dashboard">
+                        <a href="https://www.google.fr" >Dashboard</a>
+                    </div>
+                </div>
             </div>
-            <h3>Lecture de LOG</h3>
             <div class="block-link">
-                <a href="https://www.google.fr">Kibana - Module Controle (Standard)</a>
-                <a href="https://www.google.fr">Kibana - Module Controle (Avancée)</a>
-                <a href="https://www.google.fr">Kibana - WebRTC</a>
-                <a href="https://www.google.fr">Telecom</a>
+                <h3>Lecture de LOG</h3>
+                <div class="categorie">
+                    <div class="LogoAndToolTip">
+                        <img src="/Images/LogoLink/Log.svg" alt="Log Module Controle">
+                        <a href="https://www.google.fr">Module Controle</a>
+                    </div>
+                    <div class="LogoAndToolTip"> 
+                        <img src="/Images/LogoLink/webrtc.svg" alt="Log webrtc">
+                        <a href="https://www.google.fr">WebRTC</a>
+                    </div>
+                    <div class="LogoAndToolTip">
+                        <img src="/Images/LogoLink/Telecom.svg" alt="log Telecom">
+                        <a href="https://www.google.fr" >Telecom</a>
+                    </div>
+                    <div class="LogoAndToolTip">
+                        <img src="/Images/LogoLink/phone.svg" alt="log SVI" class="circle">
+                        <a href="https://www.google.fr" >SVI</a>
+                    </div>
+                </div>
             </div>
-            <h3>Instance (routing/Record...)</h3>
             <div class="block-link">
-                <a href="https://www.google.fr">Polarlight</a>
-                <a href="https://www.google.fr">Record : Produit-Web</a>
+                <h3>Documentations</h3>
+                <div class="categorie">
+                    <div class="LogoAndToolTip">
+                        <img src="/Images/LogoLink/Odigo_HelpCenter_Intern.svg" alt="HelpCenter Interne" class="circle">
+                        <a href="https://www.google.fr">Interne</a>
+                    </div>
+                    <div class="LogoAndToolTip"> 
+                        <img src="/Images/LogoLink/Odigo_HelpCenter_Client.svg" alt="HelpCenter Client" class="circle">
+                        <a href="https://www.google.fr">Client</a>
+                    </div>
+                    <div class="LogoAndToolTip">
+                        <img src="/Images/LogoLink/GEO.svg" alt="GEO">
+                        <a href="https://www.google.fr" >GEO</a>
+                    </div>
+                </div>
             </div>
-            <h3>Documentations</h3>
             <div class="block-link">
-                <a href="https://www.google.fr">HelpCenter (Interne)</a>
-                <a href="https://www.google.fr">HelpCenter (Client)</a>
-                <a href="https://www.google.fr">Serveur Odigo - SVI</a>
+                <h3>Instance (routing/Record...)</h3>
+                <div class="categorie">
+                    <div class="LogoAndToolTip">
+                        <img src="/Images/LogoLink/PolarLight.svg" alt="PolarLight" class="circle">
+                        <a href="https://www.google.fr">PolarLight</a>
+                    </div>
+                    <div class="LogoAndToolTip"> 
+                        <img src="/Images/LogoLink/Record.svg" alt="Instance Records">
+                        <a href="https://www.google.fr">Records</a>
+                    </div>
+                    <div class="LogoAndToolTip">
+                        <img src="/Images/LogoLink/Agent.svg" alt="SVI Expert fonctionel">
+                        <a href="https://www.google.fr" >SVI Func</a>
+                    </div>
+                </div>
             </div>
         </div>
-
         <div class="block-center">
+            <div class="header">
+                <div class="black-block-container-motivation">   
+                    <p id="motivation"></p>
+                </div>
+            </div>
             <div id="search">
                 <svg viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg">
                     <rect class="bar"/>                  
@@ -94,40 +139,25 @@
                 </div>
             </div>                       
         </div>                      
-        </div>
-
-
-
         <div id="sticky-note-Droite" class="sticky-note">
-            <h2>Mon Pense-Bête</h2>
+            <h2>Pense-Bête</h2>
             <hr class="note-separation">
-            <h3>Tag ServiceNow - Ticket</h3>
-            <div class="block-link">
-                <h4>PROCESS-OK :</h4>
-                    <p>ticket qui doit bien être traité par notre groupe (on continuera à le traiter demain)</p>
-                <h4>CPT-01 :</h4>
-                    <p>capitalisation nécessaire</p>
-                <h4>INC-BUILD :</h4>
-                    <p>INC suite à un Build, dév non conforme à la SPEC,… </p>
-                <h4>INC-UPGRADE-INTERNE :</h4>
-                    <p>INC suite Montée version produit (one release, patch, NG,…)</p>
-                <h4>INC-UPGRADE-CLIENT :</h4>
-                    <p>INC suite à un change client</p>
-                <h4>VENTE-PRESTATION :</h4>
-                    <p>INC/SR qui doit donner lieu à la vente d’une prestation d’accompagnement client ou d’une formation</p>
-                <h4>FACT01 :</h4>
-                    <p>INC/SR qui doit donner lieu à une évolution à facturer au client</p>
-                <h4>ROUTAGE-KO :</h4>
-                    <p>INC/SR qui arrive à tord dans notre groupe (règle de routage à modifier,…)</p>
-                <h4>INC-VIE-SOLUTION :</h4>
-                    <p>Certificat expiré, problème CPU, saturation espace disque avec logs,…</p>
-                <h4>CORE :</h4>
-                    <p>Application qui donne lieu à un core</p>
+            
+            <div class="block-Text">
+                <h3>Tag ServiceNow - Ticket</h3>
+                <h4>PROCESS-OK : <span>Ticket qui doit bien être traité par notre groupe (on continuera à le traiter demain)</span></h4>
+                <h4>CPT-01 : <span>Capitalisation nécessaire</span></h4>                
+                <h4>INC-BUILD : <span>INC suite à un Build, dév non conforme à la SPEC,… </span></h4>                
+                <h4>INC-UPGRADE-INTERNE : <span>INC suite Montée version produit (one release, patch, NG,…)</span></h4>                
+                <h4>INC-UPGRADE-CLIENT : <span>INC suite à un change client</span></h4>                
+                <h4>VENTE-PRESTATION : <span>INC/SR qui doit donner lieu à la vente d’une prestation d’accompagnement client ou d’une formation</span></h4>                
+                <h4>FACT01 : <span>INC/SR qui doit donner lieu à une évolution à facturer au client</span></h4>                
+                <h4>ROUTAGE-KO : <span>INC/SR qui arrive à tord dans notre groupe (règle de routage à modifier,…)</span></h4>                
+                <h4>INC-VIE-SOLUTION : <span>Certificat expiré, problème CPU, saturation espace disque avec logs,…</span></h4>                
+                <h4>CORE : <span>Application qui donne lieu à un core</span></h4>                
             </div>
         </div>
     </main>
-
-    
 </body>
 <footer>
     <p>&copy; 2023 GARNIER Eddy. Tous droits réservés.</p>

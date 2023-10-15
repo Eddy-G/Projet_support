@@ -28,6 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* 100% de la hauteur de la fenêtre */
+    align-items: center;
 }
 
 header {
@@ -37,7 +38,6 @@ header {
 main {
     display: flex;
     justify-content: space-between;
-    flex-grow: 1; /* Fait en sorte que le contenu principal prenne toute la hauteur restante */
 }
 
 nav ul {
@@ -56,6 +56,9 @@ footer {
     text-align: center;
     background-color: #000000;
     color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 /******************************************************************************************/
 /* BACKGROUND IMAGE */
@@ -83,6 +86,7 @@ footer {
 #OdigoImage{
   text-align: center;
   width: 10%;
+  margin-top: 10px;
 }
 
 hr.center-diamond {
@@ -91,6 +95,7 @@ hr.center-diamond {
     width: 70vh;
     margin: 15px;
     background: var(--primarycolor);
+    padding-bottom: 1px;
     /* Opera, Chrome, and Safari */
 }
 
@@ -116,18 +121,18 @@ hr.center-diamond {
 
 .sticky-note {
   display: inline-block;
-  flex-direction: column;
   opacity: 90%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: auto;
   font-family: Arial, sans-serif;
-  background-color: var(--secondarycolor); /* Couleur marron */
+  background-color: var(--primarycolor); /* Couleur marron */
   width: 22%;
-  padding: 20px;
+  padding: 5px;
   border: 8px solid var(--primarycolor); /* Bordure marron foncé */
   border-radius: 20px;
   overflow: auto;
+  max-height: 1%;
+  
 }
 
 .sticky-note h2 {
@@ -139,53 +144,102 @@ hr.center-diamond {
 .sticky-note h3{
   margin-top: 15px;
   position: relative;
-  padding-left: 20px; /* Espacement entre le carré et le texte */
-  font-size: 110%; /*18*/
-  margin-bottom: 3px;
+  font-size: 160%; /*18*/
+  margin-bottom: 9px;
+  color: white;
 }
 
-.sticky-note h3::before{
-  content: ""; /* Contenu généré par le pseudo-élément */
-  position: absolute;
-  left: 0;
-  top: 50%; /* Pour centrer le carré verticalement par rapport au texte */
-  transform: translateY(-50%); /* Décalage pour centrer verticalement */
-  border-radius: 50%;
-  width: 10px; /* Largeur du carré */
-  height: 10px; /* Hauteur du carré */
-  background-color: white; /* Couleur du carré (remplacez par la couleur de votre choix) */
+.block-link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondarycolor);
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.block-Text{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondarycolor);
+  border-radius: 20px;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+.block-Text > h3{
+  text-align: center;
+}
+
+.block-Text > h4{
+  font-family: 'Courier New', Courier, monospace;
+  color: #000000;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+h4 > span{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  color: white;
 }
 
 .block-link h4{
   font-size: 90%; /*14*/
   margin-top: 10px;
   margin-bottom: 5px;
+  text-align: left;
 }
 .sticky-note a {
     font-size: 100%; /*16*/
     color: white; /* Texte en noir */
     text-decoration: none;
 }
-.sticky-note p {
-  font-size: 80%; /*12*/
-  color: white; /* Texte en noir */
-}
-.sticky-note a:hover{
-  font-weight: bold;
+
+
+
+
+.categorie{
+  display: flex;       /* Utilisez un conteneur flex */
+  justify-content: space-between;  /* Centre les éléments horizontalement */
+  align-items: flex-start;
 }
 
-.block-link{
+
+.LogoAndToolTip{
   display: flex;
+  flex: 1;
+  max-width: 30%; /* Pour définir la largeur maximale des éléments */
+  text-align: center;    /* Centre le contenu horizontalement */
+  margin: 10px;          /* Marge autour de chaque conteneur */
   flex-direction: column;
-  padding-left: 10%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.LogoAndToolTip > a{
+  display: flex;
+  margin-top: 7px;
+  text-align: center;
+  flex-direction: column;
+  flex: 1;
+  white-space: pre-line;
+}
+.LogoAndToolTip > img{
+  flex: 0 0 auto;
+  margin: auto;
+  max-width: 40%;   /* Assure que l'image reste dans le conteneur */
+  height: auto;      /* Maintient la proportion d'aspect */
 }
 
+.circle{
+  border-radius: 50%;
+}
 
 .note-separation {
 background: white;
 border: 0;
 height: 2px;
-margin-bottom: 15px;
 }
 
 
@@ -195,6 +249,7 @@ margin-bottom: 15px;
   justify-content: flex-start;
   align-items: center;
 }
+
 
   
 /******************************************************************************************/
@@ -213,6 +268,7 @@ margin-bottom: 15px;
 	align-items: stretch;
 	background: hsl(0, 0%, 99%);
   border-radius: 25px;
+  margin-top: 15px;
 }
 
 #search input {
@@ -308,8 +364,8 @@ margin-bottom: 15px;
   display: flex;
   justify-content: center;
   max-height: 10%;
-  width: 90%;
-  margin-top: 10%;
+  width: 360px;
+  margin-top: 15px;
   opacity: 80%;
   background-color: #000000;
   border-radius: 5px;

@@ -1,6 +1,6 @@
 const root = document.documentElement;
-root.style.setProperty('--couleur-principale', '#fffff'); // Changez la couleur principale
-
+var exaColorPrimary;
+var exaColorSecondary;
 $(document).ready(function() {
     $("#searchInput").keyup(function(event) {
         if (event.which === 13) {
@@ -11,6 +11,33 @@ $(document).ready(function() {
               // Rediriger l'utilisateur vers Google avec la recherche.
               window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
             }
+        }
+    });
+
+    $('.LogoAndToolTip').hover(
+        function() {
+            // Code exécuté lorsqu'on survole l'image
+            $(this).css('background-color', exaColorPrimary);   
+            $(this).css('border-width', 'thick');
+            $(this).css('border-radius', '20px');  
+            $(this).css('cursor', 'pointer'); 
+        },
+        function() {
+            // Code exécuté lorsque l'on quitte le survol de l'image
+            $(this).css('background-color', '');
+            $(this).css('border-width', '');
+            $(this).css('border-radius', '');
+            $(this).css('cursor', ''); 
+        }
+    );
+    $(".LogoAndToolTip").on( "click", function() {
+        window.location.href = this.childNodes[3].href;
+    });
+    $(".LogoAndToolTip").mousedown(function(event) {
+        // Vérifiez si le bouton de la souris est le bouton du milieu (bouton 2)
+        if (event.which === 2) {
+            window.open(this.childNodes[3].href,"_blank");
+            event.preventDefault();
         }
     });
 });
@@ -89,10 +116,10 @@ function extraireCouleurPrincipale(imageURL) {
             return `#${hexR}${hexG}${hexB}`;
         }
         const root = document.documentElement;
-        var exaColorPrimary = rgbToHex(couleurDominante[0],couleurDominante[1],couleurDominante[2])
+        exaColorPrimary = rgbToHex(couleurDominante[0],couleurDominante[1],couleurDominante[2])
         root.style.setProperty('--primarycolor', exaColorPrimary); // Changez la couleur principale
 
-        var exaColorSecondary = eclaircirCouleur(exaColorPrimary,15);
+        exaColorSecondary = eclaircirCouleur(exaColorPrimary,15);
         root.style.setProperty('--secondarycolor', exaColorSecondary); // Changez la couleur principale
     };
 }
@@ -118,10 +145,12 @@ function updateMaxHeightOfStickyNote()
     var maDivDroite = document.getElementById("sticky-note-Droite");
 
     if(maDivGauche.offsetHeight < maDivDroite.offsetHeight){
-        var newSize = maDivDroite.offsetHeight - 40;
+        console.log("first");
+        var newSize = maDivDroite.offsetHeight - 20;
         maDivGauche.style.height = newSize+"px";
     }else{
-        var newSize = maDivGauche.offsetHeight - 40;
+        console.log("second");
+        var newSize = maDivGauche.offsetHeight - 20;
         maDivDroite.style.height = newSize+"px";
     }
 }
