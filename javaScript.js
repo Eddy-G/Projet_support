@@ -36,8 +36,8 @@ $(document).ready(function() {
     $(".LogoAndToolTip").mousedown(function(event) {
         // Vérifiez si le bouton de la souris est le bouton du milieu (bouton 2)
         if (event.which === 2) {
-            window.open(this.childNodes[3].href,"_blank");
-            event.preventDefault();
+            e.preventDefault();
+            window.open(this.childNodes[3].href,"_blank");        
         }
     });
 });
