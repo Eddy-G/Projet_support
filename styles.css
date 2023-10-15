@@ -131,7 +131,6 @@ hr.center-diamond {
   border: 8px solid var(--primarycolor); /* Bordure marron foncé */
   border-radius: 20px;
   overflow: auto;
-  max-height: 1%;
   
 }
 
@@ -196,9 +195,6 @@ h4 > span{
     color: white; /* Texte en noir */
     text-decoration: none;
 }
-
-
-
 
 .categorie{
   display: flex;       /* Utilisez un conteneur flex */

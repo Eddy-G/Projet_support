@@ -48,6 +48,9 @@ var phrasesMotivation = [
     "Chaque jour est une nouvelle opportunité.",
     "Rien n'est impossible si vous y croyez.",
     "La positivité mène au progrès.",
+    "Le meilleur moyen de prévoir le futur, c’est de le créer.",
+    "J’aime l’impossible. La concurrence y est moins rude.",
+    "Les erreurs sont les portes de la découverte.",
     // Ajoutez autant de phrases que vous le souhaitez
 ];
 
@@ -56,7 +59,7 @@ function phraseMotivationAleatoire() {
     return phrasesMotivation[index];
 }
 function WallpaperAleatoire() {
-    return index = Math.floor(Math.random() * 2);
+    return index = Math.floor(Math.random() * 7);
 }
 // Récupérez l'élément HTML où vous souhaitez afficher la phrase de motivation
 var elementMotivation = document.getElementById("motivation");
@@ -130,7 +133,6 @@ extraireCouleurPrincipale("Images/WallPaper/"+wallPaperDuJour+".jpg");
 document.addEventListener('DOMContentLoaded', () =>
   requestAnimationFrame(updateTime)
 )
-
 function updateTime() {
     moment.locale('fr');
     document.documentElement.style.setProperty('--timer-day', "'" + moment().format("dd") + "'");
@@ -138,25 +140,3 @@ function updateTime() {
     document.documentElement.style.setProperty('--timer-minutes', "'" + moment().format("mm") + "'");
     requestAnimationFrame(updateTime);
 }
-
-function updateMaxHeightOfStickyNote()
-{
-    var maDivGauche = document.getElementById("sticky-note-Gauche");
-    var maDivDroite = document.getElementById("sticky-note-Droite");
-
-    if(maDivGauche.offsetHeight < maDivDroite.offsetHeight){
-        console.log("first");
-        var newSize = maDivDroite.offsetHeight - 20;
-        maDivGauche.style.height = newSize+"px";
-    }else{
-        console.log("second");
-        var newSize = maDivGauche.offsetHeight - 20;
-        maDivDroite.style.height = newSize+"px";
-    }
-}
-
-updateMaxHeightOfStickyNote()
-
-$(window).resize(function() {
-    updateMaxHeightOfStickyNote()
-});
