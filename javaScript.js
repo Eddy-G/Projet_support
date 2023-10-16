@@ -128,7 +128,7 @@ function extraireCouleurPrincipale(imageURL) {
 }
 
 // Utilisation de la fonction
-extraireCouleurPrincipale("Images/WallPaper/"+wallPaperDuJour+".jpg");
+extraireCouleurPrincipale("Images/WallPaper/"+wallPaperDuJour+".webp");
 
 document.addEventListener('DOMContentLoaded', () =>
   requestAnimationFrame(updateTime)
