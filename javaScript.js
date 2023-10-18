@@ -140,3 +140,53 @@ function updateTime() {
     document.documentElement.style.setProperty('--timer-minutes', "'" + moment().format("mm") + "'");
     requestAnimationFrame(updateTime);
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+const table = document.getElementById('TableToExport');
+
+// Chemin relatif vers votre fichier Excel
+const excelFilePath = 'Excel.xlsx';
+
+// Charger le fichier Excel à partir du chemin
+fetch(excelFilePath)
+    .then(response => response.blob())
+    .then(blob => {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const data = event.target.result;
+            const workbook = XLSX.read(data, { type: 'binary' });
+            const sheetName = workbook.SheetNames[0];
+            const sheet = workbook.Sheets[sheetName];
+            const dataArr = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+            // Créez le tableau HTML et affichez les données
+            const headerRow = dataArr[0];
+            let htmlTable = '<thead><tr class="row100 head">';
+            let count = 1;
+            for (let header of headerRow) {
+                if(header == null){header = ""}
+                htmlTable += `<th class="column100 column`+count+`" data-column="column`+count+`">${header}</th>`;
+                count++;
+            }
+            htmlTable += '</tr></thead><tbody>';            
+            for (let i = 1; i < dataArr.length; i++) {
+                count = 1;
+                htmlTable += '<tr class="row100">';
+                for (let cell of dataArr[i]) {
+                    
+                    htmlTable += `<td class="column100 column`+count+`" data-column="column`+count+`">${cell}</td>`;
+                    count++;
+                }
+                htmlTable += '</tr>';
+            }
+            htmlTable += '</tbody>';
+
+            table.innerHTML = htmlTable;
+        };
+        reader.readAsBinaryString(blob);
+    })
+    .catch(error => {
+        console.error('Erreur de chargement du fichier Excel :', error);
+    });
+});
