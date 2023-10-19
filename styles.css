@@ -414,12 +414,15 @@ height: 2px;
   margin-top: 20px;
 }
 
+
+
 table {
-  background-color: #fff
+  background-color: #fff;
+  border-radius: 25px;
 }
 
 th,td {
-  padding-right: 10px
+  padding-right: 10px;
 }
 
 .column100 {
@@ -430,24 +433,24 @@ th,td {
 
 .column100.column1 {
   width: auto;
-  padding-left: 42px
+  padding-left: 42px;
 }
 
 .row100.head th {
   padding-top: 24px;
-  padding-bottom: 20px
+  padding-bottom: 20px;
 }
 
 .row100 td {
   padding-top: 18px;
-  padding-bottom: 14px
+  padding-bottom: 14px;
 }
 
 .table100.ver1 td {
   font-family: Montserrat-Regular;
   font-size: 14px;
   color: gray;
-  line-height: 1.4
+  line-height: 1.4;
 }
 
 .table100.ver1 th {
@@ -465,6 +468,6 @@ th,td {
 
 
 .table100.ver1 .row100 td:hover {
-  background-color: var(--primarycolor);
+  background-color: var(--secondarycolor);
   color: #fff
 }

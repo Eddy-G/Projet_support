@@ -166,7 +166,13 @@ fetch(excelFilePath)
             let count = 1;
             for (let header of headerRow) {
                 if(header == null){header = ""}
-                htmlTable += `<th class="column100 column`+count+`" data-column="column`+count+`">${header}</th>`;
+                if(count == 1){
+                    htmlTable += `<th class="column100 column`+count+`" data-column="column`+count+`" style="border-radius:25px 0 0 0">${header}</th>`;
+                }else if (count == headerRow.length){
+                    htmlTable += `<th class="column100 column`+count+`" data-column="column`+count+`" style="border-radius:0 25px 0 0">${header}</th>`;
+                }else{
+                    htmlTable += `<th class="column100 column`+count+`" data-column="column`+count+`">${header}</th>`;
+                }                
                 count++;
             }
             htmlTable += '</tr></thead><tbody>';            
@@ -174,8 +180,17 @@ fetch(excelFilePath)
                 count = 1;
                 htmlTable += '<tr class="row100">';
                 for (let cell of dataArr[i]) {
-                    
-                    htmlTable += `<td class="column100 column`+count+`" data-column="column`+count+`">${cell}</td>`;
+                    if(i+1 == dataArr.length){
+                        if(count==1){
+                            htmlTable += `<td class="column100 column`+count+`" data-column="column`+count+`" style="border-radius:0 0 0 25px">${cell}</td>`;
+                        }else if(count == dataArr[i].length){
+                            htmlTable += `<td class="column100 column`+count+`" data-column="column`+count+`" style="border-radius:0 0 25px 0">${cell}</td>`;
+                        }else{
+                            htmlTable += `<td class="column100 column`+count+`" data-column="column`+count+`">${cell}</td>`;
+                        }
+                    }else{
+                        htmlTable += `<td class="column100 column`+count+`" data-column="column`+count+`">${cell}</td>`;
+                    }                    
                     count++;
                 }
                 htmlTable += '</tr>';
