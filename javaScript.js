@@ -1,4 +1,5 @@
 const root = document.documentElement;
+var imgBackGround;
 var exaColorPrimary;
 var exaColorSecondary;
 const themeFilePath = 'themes.csv';
@@ -24,11 +25,12 @@ $(document).ready(function() {
             arrValues.push(line.split(','));                                                        
         });
         var index = Math.floor(Math.random() * 7);
-        //var elementWallpaper = document.getElementById("wallpaper");
-        //elementWallpaper.style.backgroundImage = "url('Images/WallPaper/"+arrValues[index][0]+".webp')"
-        root.style.setProperty('--imgBackGround', 'url("Images/WallPaper/'+arrValues[index][0]+'.webp")');
-        root.style.setProperty('--primarycolor', arrValues[index][1]); 
-        root.style.setProperty('--secondarycolor', arrValues[index][2]); 
+        imgBackGround = arrValues[index][0];
+        exaColorPrimary = arrValues[index][1];
+        exaColorSecondary = arrValues[index][2]
+        root.style.setProperty('--imgBackGround', 'url("Images/WallPaper/'+imgBackGround+'.webp")');
+        root.style.setProperty('--primarycolor', exaColorPrimary); 
+        root.style.setProperty('--secondarycolor', exaColorSecondary); 
     });
 
     // Détect la touche "Enter" du clavier, qui lance ensuite une recherche google en fonction de la saisie dans la search bar
